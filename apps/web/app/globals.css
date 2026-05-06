@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+html, body { height: 100%; }
+body {
+  @apply bg-canvas text-ink-900 antialiased;
+  font-feature-settings: "cv11", "ss01";
+  background:
+    linear-gradient(135deg, rgba(246,247,249,1) 0%, rgba(234,246,251,0.92) 48%, rgba(248,250,252,1) 100%);
+}
+
+@layer components {
+
+/* ---------- Surfaces ---------- */
+.card      { @apply bg-white/80 border border-white/70 rounded-2xl shadow-card p-5 backdrop-blur-xl; }
+.card-tint-sky    { @apply rounded-2xl shadow-card p-5 bg-sky-50/90 border border-white/70; }
+.card-tint-butter { @apply rounded-2xl shadow-card p-5 bg-butter-50/90 border border-white/70; }
+.card-tint-mint   { @apply rounded-2xl shadow-card p-5 bg-mint-50/90 border border-white/70; }
+.card-tint-rose   { @apply rounded-2xl shadow-card p-5 bg-rose-50/90 border border-white/70; }
+.card-brand       { @apply rounded-2xl shadow-ring p-5 bg-brand-500 text-white; }
+
+.panel     { @apply bg-white/80 border border-white/70 rounded-3xl shadow-card backdrop-blur-xl; }
+
+/* ---------- Controls ---------- */
+.btn { @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition; }
+.btn-primary   { @apply btn bg-brand-500 text-white hover:bg-brand-600 disabled:opacity-50; }
+.btn-secondary { @apply btn bg-white text-ink-900 border border-ink-300/50 hover:bg-ink-300/10; }
+.btn-ghost     { @apply btn text-ink-700 hover:bg-ink-300/10; }
+
+.input  { @apply w-full rounded-xl bg-white/85 border border-ink-300/40 px-4 py-2.5 text-sm placeholder:text-ink-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-300; }
+.select { @apply input appearance-none pr-11 bg-no-repeat; background-position: right 0.9rem center; background-size: 1rem;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235A6072' stroke-width='2'><polyline points='6 9 12 15 18 9'/></svg>"); }
+
+.badge { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium; }
+.badge-brand { @apply badge bg-brand-100 text-brand-700; }
+.badge-mint  { @apply badge bg-mint-100 text-emerald-800; }
+.badge-rose  { @apply badge bg-rose-100 text-rose-700; }
+.badge-sky   { @apply badge bg-sky-100 text-sky-800; }
+.badge-ink   { @apply badge bg-ink-300/30 text-ink-700; }
+
+/* ---------- Sidebar ---------- */
+.sidebar-link { @apply flex items-center gap-3 rounded-xl px-3 py-2 text-sm font-medium text-ink-500 hover:text-ink-900 hover:bg-white/70 transition; }
+.sidebar-link-active { @apply bg-brand-500/10 text-brand-700; }
+
+/* ---------- Utility ---------- */
+.kbd { @apply inline-flex items-center justify-center h-5 min-w-[20px] px-1 rounded border border-ink-300/60 text-[10px] font-mono text-ink-500 bg-white; }
+.divider { @apply h-px w-full bg-ink-300/30; }
+
+}
+

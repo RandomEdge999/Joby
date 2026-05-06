@@ -1,0 +1,23 @@
+services:
+  api:
+    build: ./apps/api
+    ports:
+      - "${API_PORT:-8000}:8000"
+    environment:
+      - DATABASE_URL=sqlite:////data/joby.db
+      - LM_STUDIO_BASE_URL=${LM_STUDIO_BASE_URL:-http://host.docker.internal:1234/v1}
+      - LM_STUDIO_MODEL=${LM_STUDIO_MODEL:-}
+    volumes:
+      - ./data:/data
+      - ./config:/config
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  web:
+    build: ./apps/web
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:${API_PORT:-8000}
+    depends_on:
+      - api

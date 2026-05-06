@@ -1,0 +1,157 @@
+# Joby source config.
+#
+# Each entry under `ats_sources` targets a public job-board API (no
+# authentication needed). Supported `type` values: greenhouse, lever, ashby,
+# smartrecruiters, workable, recruitee.
+#
+# `slug` is the board identifier used by the vendor API (NOT the careers-page
+# URL). If a company moves ATS or renames its board, toggle `enabled: false`
+# until it's updated.
+#
+# Workday lives in its own block because it needs `tenant` + `site`.
+# JobSpy (LinkedIn/Indeed/Glassdoor/ZipRecruiter/Google Jobs) is enabled
+# globally plus per-site; per-user search terms come from the profile.
+
+ats_sources:
+  # ---------- Greenhouse ----------
+  - { company: Stripe,            type: greenhouse, slug: stripe,            enabled: true }
+  - { company: Airbnb,            type: greenhouse, slug: airbnb,            enabled: true }
+  - { company: Anthropic,         type: greenhouse, slug: anthropic,         enabled: true }
+  - { company: Figma,             type: greenhouse, slug: figma,             enabled: true }
+  - { company: Databricks,        type: greenhouse, slug: databricks,        enabled: true }
+  - { company: Cloudflare,        type: greenhouse, slug: cloudflare,        enabled: true }
+  - { company: Discord,           type: greenhouse, slug: discord,           enabled: true }
+  - { company: Notion,            type: greenhouse, slug: notion,            enabled: true }
+  - { company: Dropbox,           type: greenhouse, slug: dropbox,           enabled: true }
+  - { company: Robinhood,         type: greenhouse, slug: robinhood,         enabled: true }
+  - { company: Plaid,             type: greenhouse, slug: plaid,             enabled: true }
+  - { company: Duolingo,          type: greenhouse, slug: duolingo,          enabled: true }
+  - { company: Coinbase,          type: greenhouse, slug: coinbase,          enabled: true }
+  - { company: GitLab,            type: greenhouse, slug: gitlab,            enabled: true }
+  - { company: HubSpot,           type: greenhouse, slug: hubspot,           enabled: true }
+  - { company: Lyft,              type: greenhouse, slug: lyft,              enabled: true }
+  - { company: DoorDash,          type: greenhouse, slug: doordash,          enabled: true }
+  - { company: Instacart,         type: greenhouse, slug: instacart,         enabled: true }
+  - { company: Twitch,            type: greenhouse, slug: twitch,            enabled: true }
+  - { company: Pinterest,         type: greenhouse, slug: pinterest,         enabled: true }
+  - { company: Reddit,            type: greenhouse, slug: reddit,            enabled: true }
+  - { company: Affirm,            type: greenhouse, slug: affirm,            enabled: true }
+  - { company: Brex,              type: greenhouse, slug: brex,              enabled: true }
+  - { company: Chime,             type: greenhouse, slug: chime,             enabled: true }
+  - { company: Airtable,          type: greenhouse, slug: airtable,          enabled: true }
+  - { company: Asana,             type: greenhouse, slug: asana,             enabled: true }
+  - { company: Datadog,           type: greenhouse, slug: datadog,           enabled: true }
+  - { company: Gusto,             type: greenhouse, slug: gusto,             enabled: true }
+  - { company: Box,               type: greenhouse, slug: box,               enabled: true }
+  - { company: Zillow,            type: greenhouse, slug: zillowgroup,       enabled: true }
+  - { company: Expedia,           type: greenhouse, slug: expediagroup,      enabled: true }
+  - { company: MongoDB,           type: greenhouse, slug: mongodb,           enabled: true }
+  - { company: Rippling,          type: greenhouse, slug: rippling,          enabled: true }
+  - { company: Canva,             type: greenhouse, slug: canva,             enabled: true }
+  - { company: Scale AI,          type: greenhouse, slug: scaleai,           enabled: true }
+  - { company: Applied Intuition, type: greenhouse, slug: appliedintuition,  enabled: true }
+  - { company: Samsara,           type: greenhouse, slug: samsara,           enabled: true }
+  - { company: Benchling,         type: greenhouse, slug: benchling,         enabled: true }
+  - { company: Carta,             type: greenhouse, slug: carta,             enabled: true }
+  - { company: Grammarly,         type: greenhouse, slug: grammarly,         enabled: true }
+  - { company: Shopify,           type: greenhouse, slug: shopify,           enabled: true }
+  - { company: Atlassian,         type: greenhouse, slug: atlassian,         enabled: true }
+  - { company: Pendo,             type: greenhouse, slug: pendo,             enabled: true }
+  - { company: Unity,             type: greenhouse, slug: unity3d,           enabled: true }
+  - { company: Hex,               type: greenhouse, slug: hex,               enabled: true }
+  - { company: Vanta,             type: greenhouse, slug: vanta,             enabled: true }
+  - { company: Retool,            type: greenhouse, slug: retool,            enabled: true }
+  - { company: Anduril,           type: greenhouse, slug: andurilindustries, enabled: true }
+  - { company: Wiz,               type: greenhouse, slug: wizinc,            enabled: true }
+  - { company: Zocdoc,            type: greenhouse, slug: zocdoc,            enabled: true }
+  - { company: Roblox,            type: greenhouse, slug: roblox,            enabled: true }
+  - { company: Klaviyo,           type: greenhouse, slug: klaviyo,           enabled: true }
+  - { company: ElevenLabs,        type: greenhouse, slug: elevenlabs,        enabled: true }
+  - { company: Runway,            type: greenhouse, slug: runway,            enabled: true }
+  - { company: Character.AI,      type: greenhouse, slug: characterai,       enabled: true }
+  - { company: Groq,              type: greenhouse, slug: groq,              enabled: true }
+
+  # ---------- Lever ----------
+  - { company: Netflix,           type: lever, slug: netflix,           enabled: true }
+  - { company: Palantir,          type: lever, slug: palantir,          enabled: true }
+  - { company: Spotify,           type: lever, slug: spotify,           enabled: true }
+  - { company: Checkr,            type: lever, slug: checkr,            enabled: true }
+  - { company: Mixpanel,          type: lever, slug: mixpanel,          enabled: true }
+  - { company: Faire,             type: lever, slug: faire,             enabled: true }
+  - { company: Ro,                type: lever, slug: ro,                enabled: true }
+  - { company: Clari,             type: lever, slug: clari,             enabled: true }
+  - { company: Coursera,          type: lever, slug: coursera,          enabled: true }
+  - { company: Amplitude,         type: lever, slug: amplitude,         enabled: true }
+  - { company: Attentive,         type: lever, slug: attentive,         enabled: true }
+  - { company: Wellfound,         type: lever, slug: wellfound,         enabled: true }
+  - { company: Kraken,            type: lever, slug: kraken,            enabled: true }
+  - { company: Fivetran,          type: lever, slug: fivetran,          enabled: true }
+
+  # ---------- Ashby ----------
+  - { company: OpenAI,            type: ashby, slug: openai,            enabled: true }
+  - { company: Ramp,              type: ashby, slug: ramp,              enabled: true }
+  - { company: Linear,            type: ashby, slug: linear,            enabled: true }
+  - { company: Mercury,           type: ashby, slug: mercury,           enabled: true }
+  - { company: Vercel,            type: ashby, slug: vercel,            enabled: true }
+  - { company: Cursor,            type: ashby, slug: anysphere,         enabled: true }
+  - { company: Replit,            type: ashby, slug: replit,            enabled: true }
+  - { company: Hugging Face,      type: ashby, slug: huggingface,       enabled: true }
+  - { company: Supabase,          type: ashby, slug: supabase,          enabled: true }
+  - { company: Neon,               type: ashby, slug: neon,             enabled: true }
+  - { company: Modal,             type: ashby, slug: modal,             enabled: true }
+  - { company: Cohere,            type: ashby, slug: cohere,            enabled: true }
+  - { company: Perplexity,        type: ashby, slug: perplexity,        enabled: true }
+  - { company: Mistral AI,        type: ashby, slug: mistralai,         enabled: true }
+  - { company: Tecton,            type: ashby, slug: tecton,            enabled: true }
+  - { company: Together AI,       type: ashby, slug: together,          enabled: true }
+  - { company: Fal,               type: ashby, slug: fal,               enabled: true }
+  - { company: Crusoe,            type: ashby, slug: crusoe,            enabled: true }
+  - { company: Superhuman,        type: ashby, slug: superhuman,        enabled: true }
+  - { company: Descript,          type: ashby, slug: descript,          enabled: true }
+
+  # ---------- SmartRecruiters ----------
+  - { company: Bosch,             type: smartrecruiters, slug: bosch,             enabled: true }
+  - { company: Allianz,           type: smartrecruiters, slug: allianz,           enabled: true }
+  - { company: LinkedIn,          type: smartrecruiters, slug: linkedin,          enabled: true }
+  - { company: Visa,              type: smartrecruiters, slug: visa,              enabled: true }
+
+  # ---------- Workable ----------
+  - { company: Postman,           type: workable, slug: postman,          enabled: true }
+  - { company: Typeform,          type: workable, slug: typeform,         enabled: true }
+  - { company: Deliveroo,         type: workable, slug: deliveroo,        enabled: true }
+
+  # ---------- Recruitee ----------
+  - { company: Blendle,           type: recruitee, slug: blendle,         enabled: true }
+  - { company: Mollie,            type: recruitee, slug: mollie,          enabled: true }
+
+
+# ---- Workday public CXS tenants ------------------------------------------
+# Each org defines `tenant` (subdomain) and `site` (board id). Find them by
+# opening the careers URL:
+#   https://{tenant}.wd1.myworkdayjobs.com/en-US/{site}
+# The scraper auto-probes wd1/wd3/wd5/wd103.
+workday:
+  enabled: false
+  organizations:
+    - { company: NVIDIA,     tenant: nvidia,     site: NVIDIAExternalCareerSite, enabled: true }
+    - { company: Salesforce, tenant: salesforce, site: External_Career_Site,     enabled: true }
+    - { company: Adobe,      tenant: adobe,      site: external_experienced,     enabled: true }
+    - { company: Cisco,      tenant: cisco,      site: Cisco,                    enabled: true }
+    - { company: JPMorgan,   tenant: jpmc,       site: jpmc,                     enabled: true }
+    - { company: Intuit,     tenant: intuit,     site: IntuitCareers,            enabled: true }
+    - { company: Ford,       tenant: ford,       site: FordCareers,              enabled: true }
+    - { company: "3M",       tenant: 3m,         site: Search,                   enabled: true }
+
+
+# ---- JobSpy (LinkedIn, Indeed, Glassdoor, ZipRecruiter, Google Jobs) -----
+# Enable via Settings, or flip `enabled: true` here. Search terms live in
+# your profile under sources.jobspy_search_terms. JobSpy is rate-limit
+# sensitive: keep results_per_term modest.
+jobspy:
+  enabled: false
+  linkedin: true
+  indeed: true
+  glassdoor: true
+  ziprecruiter: true
+  google: true
+  cache_ttl_seconds: 1800

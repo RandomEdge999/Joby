@@ -1,0 +1,67 @@
+profile_name: international_student_opt
+preset: international-student-opt
+
+identity:
+  citizenship_status: international_student
+  needs_sponsorship_now: false
+  needs_sponsorship_future: true
+  security_clearance: none
+  major_family:
+    primary: computer_science
+    related:
+      - software_engineering
+      - data_science
+
+targeting:
+  target_employment:
+    - full_time
+  target_levels:
+    - entry
+    - new_grad
+  target_roles:
+    - software engineer
+    - backend engineer
+    - platform engineer
+  target_locations:
+    - name: san_francisco_bay_area
+      radius_miles: 35
+      remote_ok: true
+  remote_preference: hybrid_or_remote
+  relocation_ok: true
+  salary_floor: 90000
+  salary_ceiling: null
+  posted_within_days: 14
+  industry_allow:
+    - software
+    - ai
+    - fintech
+  industry_block:
+    - defense_if_clearance_required
+  company_tier_preference:
+    - top
+    - strong
+
+resume:
+  resume_path: ./data/resume.pdf
+  resume_summary: ""
+  must_have_skills:
+    - python
+    - fastapi
+    - sql
+  nice_to_have_skills:
+    - docker
+    - aws
+    - llm
+  years_experience: 1
+
+scoring:
+  w_fit: 0.5
+  w_opportunity: 0.3
+  w_urgency: 0.2
+  visa_hard_filter: false
+
+sources:
+  enable_jobspy: true
+  enable_ats: true
+  enable_workday: false
+  watch_default_cadence_hours: 6
